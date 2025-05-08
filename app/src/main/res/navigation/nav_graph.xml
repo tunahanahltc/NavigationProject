@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- ANASAYFA -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigation.HomeFragment"
+        android:label="Anasayfa">
+        <action
+            android:id="@+id/action_home_to_a"
+            app:destination="@id/pageAFragment" />
+        <action
+            android:id="@+id/action_home_to_c"
+            app:destination="@id/pageCFragment" />
+    </fragment>
+
+    <!-- SAYFA A -->
+    <fragment
+        android:id="@+id/pageAFragment"
+        android:name="com.example.navigation.PageAFragment"
+        android:label="Sayfa A">
+        <action
+            android:id="@+id/action_a_to_b"
+            app:destination="@id/pageBFragment" />
+    </fragment>
+
+    <!-- SAYFA B -->
+    <fragment
+        android:id="@+id/pageBFragment"
+        android:name="com.example.navigation.PageBFragment"
+        android:label="Sayfa B">
+        <action
+            android:id="@+id/action_b_to_d"
+            app:destination="@id/pageDFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <!-- SAYFA C -->
+    <fragment
+        android:id="@+id/pageCFragment"
+        android:name="com.example.navigation.PageCFragment"
+        android:label="Sayfa C">
+        <action
+            android:id="@+id/action_c_to_d"
+            app:destination="@id/pageDFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <!-- SAYFA D (Y) -->
+    <fragment
+        android:id="@+id/pageDFragment"
+        android:name="com.example.navigation.PageDFragment"
+        android:label="Sayfa D" />
+</navigation>
